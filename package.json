@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "serverless-offline": "^8.3.1"
+  },
+  "dependencies": {
+    "serverless-auto-swagger": "file:../serverless-auto-swagger-1.3.4.tgz"
+  }
+}

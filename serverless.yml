@@ -1,0 +1,35 @@
+org: ddrummond
+app: serverless-docs-python
+service: serverless-docs-python
+
+frameworkVersion: '2 || 3'
+
+provider:
+  name: aws
+  # runtime: nodejs12.x
+  runtime: python3.8
+  lambdaHashingVersion: 20201221
+
+functions:
+  health:
+    handler: handler.health
+    events:
+      - http:
+          method: get
+          path: /health
+          cors: true
+          responses:
+            '200':
+              description: A Successful responses
+              bodyType: Contact
+            '400':
+              description: You done gone fucked it up now.
+      
+
+plugins:
+  - serverless-auto-swagger
+  - serverless-offline
+
+custom:
+  autoswagger:
+    generateSwaggerOnDeploy: false

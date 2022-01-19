@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# This is a generated folder and doesn't need to be kept in version control.
+swagger/
+
+# Serverless directories
+.serverless
+node_modules/
